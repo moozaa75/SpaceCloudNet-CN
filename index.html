@@ -3,25 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SpaceCloudNet</title>
+<title>太空云网 · SpaceCloudNet</title>
 <link rel="canonical" href="https://spacecloudnet.com/">
 <meta name="robots" content="noindex, follow">
-<meta name="theme-color" content="#070b16">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#05070f">
 <meta http-equiv="refresh" content="0; url=https://spacecloudnet.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
-:root{ --bg:#070b16; --fg:#e8eefc; --muted:#93a3c4; --accent:#4f8cff; }
-@media (prefers-color-scheme: light){ :root{ --bg:#f6f8fd; --fg:#0d1526; --muted:#5a6b8c; } }
-body{margin:0;min-height:100vh;min-height:100svh;background:var(--bg);color:var(--fg);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:40px 20px;text-align:center;
-  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Roboto,Helvetica,Arial,sans-serif}
-img{width:64px;height:64px}
-p{margin:0;color:var(--muted);font-size:14.5px}
-a{color:var(--accent)}
+:root{ --bg:#05070f; --fg:#e9eeff; --muted:#93a4c8; --accent:#5b8cff; --accent-2:#5ff0ff; }
+body{
+  margin:0; min-height:100vh; min-height:100svh; overflow:hidden; background:var(--bg); color:var(--fg);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;
+  padding:40px 20px; text-align:center;
+  font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.halo{position:fixed; inset:-20%; pointer-events:none;
+  background:radial-gradient(42% 34% at 50% 46%, rgba(91,140,255,.22), rgba(95,240,255,.07) 45%, transparent 72%);
+  animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.5; transform:scale(1)} 50%{opacity:1; transform:scale(1.07)}}
+/* 轨道脉冲：呼应主站的星链动效，纯 CSS，零脚本开销 */
+.orbit{position:relative; width:104px; height:104px}
+.orbit i{position:absolute; inset:0; border-radius:50%; border:1px solid rgba(91,140,255,.35); animation:spin 6s linear infinite}
+.orbit i:nth-child(2){inset:14px; border-color:rgba(95,240,255,.28); animation-duration:9s; animation-direction:reverse}
+.orbit i:nth-child(3){inset:28px; border-color:rgba(91,140,255,.5); animation-duration:4.5s}
+.orbit b{position:absolute; top:-3px; left:50%; width:6px; height:6px; margin-left:-3px; border-radius:50%;
+  background:var(--accent-2); box-shadow:0 0 12px rgba(95,240,255,.9)}
+.orbit img{position:absolute; inset:0; margin:auto; width:44px; height:44px}
+@keyframes spin{to{transform:rotate(360deg)}}
+p{position:relative; margin:0; color:var(--muted); font-size:14.5px}
+a{color:var(--accent-2)}
+a:focus-visible{outline:2px solid var(--accent-2); outline-offset:3px}
+@media (prefers-reduced-motion: reduce){ .halo,.orbit i{animation:none} }
 </style>
 </head>
 <body>
-  <img src="/favicon.svg" alt="SpaceCloudNet" width="64" height="64">
+  <div class="halo" aria-hidden="true"></div>
+  <div class="orbit" aria-hidden="true">
+    <i></i><i></i><i></i><b></b>
+    <img src="/favicon.svg" alt="" width="44" height="44">
+  </div>
   <p>正在跳转到 spacecloudnet.com …</p>
   <p>Redirecting to <a href="https://spacecloudnet.com/">spacecloudnet.com</a></p>
 <script>

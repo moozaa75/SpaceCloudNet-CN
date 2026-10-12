@@ -6,6 +6,8 @@
 
 GitHub Pages 的每个站点只能绑定一个自定义域名，`.com` 与 `.cn` 无法共用同一个 Pages 站点。因此本仓库只做一件事：占住 `spacecloudnet.cn` 这个域名并做跳转。
 
+> 绑定自定义域名后，本仓库的默认地址 `https://moozaa75.github.io/SpaceCloudNet-CN/` 会返回 404 "Site not found"（GitHub 的预期行为），访问请走 `https://spacecloudnet.cn/`。
+
 跳转采用三重保底，任意一层生效即可：
 
 1. `<meta http-equiv="refresh" content="0; url=...">`
