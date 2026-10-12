@@ -1,0 +1,3 @@
+# 本域仅作跳转使用，不参与收录（canonical 指向 spacecloudnet.com）
+User-agent: *
+Disallow: /
